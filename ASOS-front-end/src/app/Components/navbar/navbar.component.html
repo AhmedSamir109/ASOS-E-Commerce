@@ -1,0 +1,93 @@
+<nav class="navbar navbar-expand-lg navbar-light nav-bg py-2 py-lg-0">
+  <div class="container">
+
+    <div class="d-flex align-items-center">
+      <button
+       class="navbar-toggler hidden-lg-up me-2"
+       type="button"
+       data-bs-toggle="collapse"
+       data-bs-target="#collapsibleNavId"
+       aria-controls="collapsibleNavId"
+       aria-expanded="false"
+       aria-label="Toggle navigation">
+      </button>
+
+      <a class="navbar-brand me-4" [routerLink]="'/home'">
+        <img src="../../../assets/logo.svg" class="nav-logo" alt="Home" />
+      </a>
+    </div>
+
+    <div class="d-lg-none">
+        <i class="fa-regular fa-heart text-light fs-5 pointer mx-2" routerLink="/wish-list"></i>
+
+        <i class="fa-solid fa-bag-shopping position-relative text-light fs-3 mx-2 pointer">
+          <span class="badge cart-num" *ngIf="enableNavbar" routerLink="/shopping-cart/cart">{{totalCount}}</span>  
+          <span class="badge cart-num" *ngIf="!enableNavbar"></span>
+        </i>
+    </div>
+
+    <div class="collapse navbar-collapse px-2" id="collapsibleNavId">
+
+      <ul class="navbar-nav me-auto mt-2 mt-lg-0">
+        <li class="nav-item fs-5 fw-medium px-3  pointer py-2 women" routerLink="women" routerLinkActive="Active">
+          <a class="nav-link text-white" aria-current="page"> Women </a>
+        </li>
+        <li class="nav-item fs-5 fw-medium px-3 pointer py-2 men" routerLink="men" routerLinkActive="Active">
+          <a class="nav-link text-white"> Men</a>
+        </li>
+      </ul>
+
+      <hr class="d-lg-none my-3 w-100 text-light">
+
+      <ul class="navbar-nav ms-auto align-items-lg-center d-none d-lg-flex">
+        <li class="nav-item dropdown pointer">
+          <a
+            class="nav-link dropdown-toggle"
+
+            id="dropdownId"
+            data-bs-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false">
+              <i class="fa-solid fa-user text-light fs-4 pointer"></i>      
+          </a>
+          <div class="dropdown-menu" aria-labelledby="dropdownId">
+            <a class="dropdown-item" routerLink="/Profile"> <i class="fa-solid fa-circle-user me-2"></i> My Account</a>
+
+            <div class="d-flex" *ngIf="!enableNavbar">
+              <a class="dropdown-item" routerLink="/login">Login</a> | <a class="dropdown-item" routerLink="/register">Register</a>
+            </div>
+
+            <a class="dropdown-item" *ngIf="enableNavbar" (click)="logOut()"> <i class="fa-solid fa-arrow-right-from-bracket me-2"></i> Log Out</a>
+
+          </div>
+        </li>
+        <li class="nav-item text-light mx-lg-4 fs-3 pointer" routerLink="/wish-list">
+          <i class="fa-regular fa-heart"></i>
+        </li>
+        <li class="nav-item text-light fs-3  pointer" routerLink="/shopping-cart/cart">
+          <i class="fa-solid fa-bag-shopping position-relative">
+            <span class="badge cart-num" *ngIf="enableNavbar">{{totalCount}}</span>  
+            <span class="badge cart-num" *ngIf="!enableNavbar"></span>
+          </i>
+        </li>
+      </ul>
+
+
+      <ul class="navbar-nav ms-auto align-items-lg-center d-lg-none ps-3 mt-2">
+        <li class="nav-item text-light mx-lg-4 mb-1 fs-6 pointer">
+          <a class="dropdown-item" routerLink="/Profile">  My Account</a>
+        </li>
+        <li class="nav-item text-light mx-lg-4 mb-1 fs-6 pointer">
+          <div class="d-flex" *ngIf="!enableNavbar">
+            <a class="dropdown-item pe-2" routerLink="/login">Login</a> | <a class="dropdown-item ps-2" routerLink="/register">Register</a>
+          </div>
+        </li>
+        <li class="nav-item text-light mx-lg-4 mb-1 fs-6 pointer" (click)="logOut()">
+          <a class="dropdown-item" *ngIf="enableNavbar"> Log Out</a>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
