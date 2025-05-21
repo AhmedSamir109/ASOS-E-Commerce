@@ -1,0 +1,51 @@
+<section class="px-5">
+    
+    <div class="product-container">
+      <div class="product-gallery">
+        <div class="main-image-container">
+          <img [src]="mainImage" alt="Main Product Image" class="main-image">
+          <div class="image-overlay"></div>
+        </div>
+    
+        <div class="thumbnail-container">
+          <div
+            class="thumbnail"
+            *ngFor="let thumb of thumbnails; let i = index"
+            [class.active]="mainImage === thumb"
+            (click)="setMainImage(thumb)"
+            [attr.data-index]="i"
+          >
+            <img [src]="thumb" [alt]="">
+          </div>
+        </div>
+      </div>
+    
+      <div class="product-details">
+        <h1 class="product-title">{{product.name}}</h1>
+        <div class="price-container">
+          <span class="current-price">{{product.price|currency}}</span>
+          <!-- <span class="original-price">$159.99</span>
+          <span class="discount">20% OFF</span> -->
+        </div>
+    
+        <div class="product-description">
+          <p>
+           {{product.description}}
+          </p>
+          <ul class="features-list">
+            <li><i class="fa-solid fa-circle-dot feature-icon"></i>{{product.brandName}}</li>
+            <li><i class="fa-solid fa-circle-dot feature-icon"></i>{{product.categoryName}}</li>
+            <li><i class="fa-solid fa-circle-dot feature-icon"></i>{{product.productTypeName}}</li>
+            <li><i class="fa-solid fa-circle-dot feature-icon"></i>{{product.rate}} <i class="fa-solid fa-star text-warning"></i> </li>
+          </ul>
+        </div>
+    
+        <div class="action-buttons">
+          <button class="add-to-cart btn" (click)="AddToCart(product.id)">Add to Cart</button>
+          <button class="wishlist btn" (click)="AddToWishList(product.id)"><i class="fa-solid fa-heart"></i> Wishlist</button>
+        </div>
+      </div>
+    </div>
+    
+    <div class="floating-particles"></div>
+</section>

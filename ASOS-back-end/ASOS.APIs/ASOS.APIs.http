@@ -1,0 +1,27 @@
+@ASOS.APIs_HostAddress = https://localhost:7023
+
+GET {{ASOS.APIs_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
+
+Post {{ASOS.APIs_HostAddress}}/api/User/register
+Accept: application/json
+Content-Type: application/json
+{
+    "userName":"Ahmed",
+    "email":"ahmed@gmail.com",
+    "password":"123456"
+}
+
+
+
+
+
+
+
+
+
+GET {{ASOS.APIs_HostAddress}}/api/men/shoes/loafers
+
+###
