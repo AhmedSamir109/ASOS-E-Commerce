@@ -2,8 +2,7 @@
 
 Full‑stack e‑commerce application inspired by ASOS. It provides product browsing, cart and wishlist management, checkout with orders and payments, and an admin‑ready backend API. The stack is split into an ASP.NET Core Web API backend and an Angular frontend.
 
-## ASOS E‑Commerce Live Demo 
- https://whimsical-salamander-37f28d.netlify.app/#/home
+## ASOS E‑Commerce Live Demo  (https://whimsical-salamander-37f28d.netlify.app/#/home)
 
 ### Features
 - **Product catalog**: brands, categories, product types, images
